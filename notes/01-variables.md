@@ -49,3 +49,99 @@ To Define a variable in java, we need to specify the type first followed by the 
 >
 > `boolean b=true;`<br>
 > Here, b is a variable of type boolean.<br>
+
+---
+
+## Literals
+
+To store a binary value in int variable, add **0b as prefix** and simillarly, to store hexadecimal values in a int variable, add **0x as prefix**.
+
+    int num1=0b101; //Binary Number
+    int num2=0x110; //Hexadecimal Number
+    int largeNumber=1_00_00_000 //numbers can be seperated using _(underscore)
+
+**when storing an integer value in double/float, it will be converted to float value automatically**.
+
+    double d=56; //stored as 56.0
+
+**Performing arithimetic operations on charecters is valid**.
+
+    char c='a';
+    c++; //result: 'b'
+
+**Assigning 0/1 to a boolean variable results in an error.**
+
+## Type Conversion & Casting
+
+**Type Casting** - Explictly converting a variable of one type to another
+
+Storing a variable of type int into a byte type variable isn't allowed by default i.e, larger sized variable can't be stored into smaller sized variables. But, we can cast them to the targetted variable type and store the value.[ Reverse is possible ]
+
+    byte b=127;
+    int i=12;
+
+    // b=i; will fail. as i has bigger range and javac doesn't allow this operation.
+    //in order to store i value in b, we need to cast i to byte type.
+
+    b=(byte)i;
+
+**Type Conversion** - Simillarly, storing lesser size variable data to higher sized variable is possible by default and value will be converted to the targetted type implicitly.
+
+    byte b=127;
+    int i =12;
+    i=b; //possible
+
+**Converting a float/double value to integer type** will result in losing the precision value[ decimal value ]
+
+    double d=56.89;
+    int i =(int) d; // i will be 56.
+
+**When an value is typecasted to byte** and if the value isn't in the range of byte [ -128 to 127 ] then the modulo operation will be performed between value and the range and result will be stored.
+
+    byte b=127;
+    int i=257;
+    b=(byte)i; //bcoz i isn't in the range of byte
+    //257%256 will be stored. as total range of byte is 256 [ -128 to 127 ]
+
+## Logical Operators
+
+    && - And
+    || - Or
+    ! - Not
+
+In the case of **Or**, result will be _True_ when any one of two variables is True.So, when the first variable is True, **Short Circuit OR** will not check for the second variable.<br>
+
+    boolean result=(a<b) || (c>d);
+
+Here, if (a<b) output is True, then second part will not checked.
+
+Simillarly, In the case of **And**, result will be _False_ when any one of two variables is False.So, when the first variable is False, **Short Circuit And** will not check for the second variable.<br>
+
+    boolean result=(a<b) && (c>d);
+
+Here, if (a<b) output is False, then second part will not checked.
+
+## Conditional Statements
+
+[ Skipped documentation for **if, if-else, if-else-if** ]
+
+**Ternary Operator**
+[ Simillar to JS]<br>
+
+    (condition)? <if condition is true> : <if condition is false>
+
+**Switch case**<br>
+
+    switch(c){
+        case 'a':
+            System.out.println('a');
+            break;
+        case 'b':
+            System.out.println('b');
+            break;
+        default:
+            System.out.println('Default');
+    }
+
+if there arent any break statements for each case; when the case is matched, rest of the cases will be continued.<br>
+If none of the cases are matched, default case will be executed.
