@@ -145,3 +145,15 @@ Here, if (a<b) output is False, then second part will not checked.
 
 if there arent any break statements for each case; when the case is matched, rest of the cases will be continued.<br>
 If none of the cases are matched, default case will be executed.
+
+
+
+**Naming Conventions**
+
+- Generally, Class Names & Interfaces should start with a capital letter.
+- Variable names and methods should start with small letter.
+- As per convention, if the method/class names has multiple words we will use camel case [ it isn't mandatory. we can seperate words using underscores too. But in general. java used camel case.]
+- Constructor Method should have the same name as the class name and starts capital letter.
+- Constants in java will be in complete CAPITALS and uses **final** keyword.
+
+    `final float PIE =3.14f;`

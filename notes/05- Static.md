@@ -1,4 +1,4 @@
-# 04. Static
+# 05. Static Variables, Methods, Block
 
 ## Static Variables
 
@@ -90,59 +90,44 @@ However, static methods cannot have the access to the instance variables directl
 
 ## Static Block
 
-### Constructor
+When constructor is used, it will be called everytime a new object is initiated [ or an anonymous object is initiated ]. We can use **Static Block** in the class definition which will be **invoked only once** when the class was first loaded into the memory to initiate static variables. **Non-Static variables cannot be referenced inside the static block**.
 
-Each class will have a constructor method which will have same name as the class name. We can use the constructor block to initialize the values whenever an instance of the class is created.
-
-**Constructor method will be called first whenever a class is invoked**. Constructor method will not return anything.
+Instead of using constructor method to initiate the static variables we can use static block to initiate static variables / perform operations using static variables.
 
     class Person {
-        static String role="Student";
-        int id;
-        String name;
-
-        public Person(){
-            System.out.println("Constructor");
-            id=1337;
-            name="Surya";
+        static int id;
+        int data;
+        static{
+            System.out.println("Static");
+            id=1;
         }
 
-        public static void print(Person p) {
-            System.out.println("Role of "+p.name+" : "+role);
+        public Person(){
+            System.out.println("In Constructor"+id);
+            id=1337;
         }
     };
 
     class Main{
         public static void main(String[] args){
             Person p1=new Person();
-            Person.print(p1);
+            Person p2=new Person();
+
+            System.out.println(p1.id);
+            System.out.println(p1.data);
         }
     }
 
-In the above example code, **Constructor function will be invoked immediately when the Person class in invoked**.
+**Output**<br>
 
-If the **constructor method is declared as private method using private keyword, then we cannot create an instance of the class**. Trying to create an object will throw an error. This pattern will be used when we only want to use **static methods on the class in our code wihtout creating any objects**.
+    Static
+    In Constructor1
+    In Constructor1337
+    1337
+    0
 
-    class Person {
-        static String role="Student";
-        int id;
-        String name;
-
-        private Person(){
-            System.out.println("Constructor");
-            id=1337;
-            name="Surya";
-        }
-
-        public static void print() {
-            System.out.println(role);
-        }
-    };
-
-    class Main{
-        public static void main(String[] args){
-            Person.print();
-        }
-    }
-
-In the above example, we are only using static method print on the Person class without creating an object.
+- Static Block is called first and static variable id is initiated with value 1.
+- Constructor method is called and id value is 1 and then id value is changed to 1337.
+- When **Object p2** is created, constructor method is called again and prints the value 1337.
+- id value is referenced on the object p1.
+- As data variable isn't initiated, referencing data variable on object p1 prints 0.
