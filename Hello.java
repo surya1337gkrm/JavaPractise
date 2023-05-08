@@ -3,6 +3,7 @@ class Calculator {
 
     // class property
     int a = 10;
+    static int initValue;
 
     public int add(int n1, int n2) {
         return n1 + n2;
@@ -11,6 +12,24 @@ class Calculator {
     // method overloading
     public int add(int n1, double n2) {
         return n1 + (int) n2;
+    }
+
+    public void printInitValue() {
+        System.out.println("Initial Value: " + initValue);
+    }
+
+    public static void print() {
+        System.out.println("Output: " + (initValue + 1));
+    }
+}
+
+class Person {
+    static String role;
+    int id;
+    String name;
+
+    public void print() {
+        System.out.println(role + " " + id + " : " + name);
     }
 }
 
@@ -97,9 +116,47 @@ class Hello {
             System.out.println();
         }
 
-        int[] arrT={11,12,13};
-        for(int num:arrT){
+        int[] arrT = { 11, 12, 13 };
+        for (int num : arrT) {
             System.out.println(num);
         }
+
+        String s1 = "Surya";
+        String s2 = "Surya";
+
+        System.out.println(s1 == s2);
+
+        StringBuffer sb = new StringBuffer("Surya");
+        System.out.println(sb.capacity());
+
+        sb.append(" Venkatesh");
+        System.out.println(sb);
+
+        System.out.println(sb.toString());
+
+        sb.insert(0, "Vijjana ");
+        System.out.println(sb);
+
+        Calculator.initValue = 100;
+        System.out.println(Calculator.initValue);
+
+        Person.role = "Student";
+        Person p1 = new Person();
+        p1.id = 1;
+        p1.name = "Surya";
+
+        Person p2 = new Person();
+        p2.id = 2;
+        p2.name = "Maddy";
+
+        System.out.println(p1.role);
+        System.out.println(p2.role);
+
+        p1.print();
+        p2.print();
+
+
+        Calculator.print();
+
     }
 }
