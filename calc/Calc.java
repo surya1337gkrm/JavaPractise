@@ -1,6 +1,8 @@
 package calc;
+
 public class Calc {
-    protected int pid =1337;
+    protected int pid = 1337;
+
     public int add(int a, int b) {
         return a + b;
     }
