@@ -126,3 +126,11 @@ Unlike classes, Interfaces helps us to simulate multiple inheritance. We can imp
             System.out.println(n.getString()); // Surya
         }
     }
+
+There are three types of Interfaces.
+
+- Normal Interface
+- Functional Interface
+- Marker Interface
+
+In Normal Interface, we can have as many methods declared as possible. Where as in Functional Interface, we can have only one method declared. Functional Interfaces is also called as **Single Abstract Method [SAM]**. A **Marker Interface** is an interface without any methods (or an empty interface).
