@@ -45,6 +45,11 @@ class Main {
         Sample s = new Sample();
         s.print();
 
+        Calc c = new Calc();
+        //bcoz packageid is declared using defualt access modifier, it willn't be accesible from other paxkages
+        
+        //System.out.println(c.packageid);
+
         SampleExtended se = new SampleExtended();
         se.print();
     }
