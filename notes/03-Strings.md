@@ -19,7 +19,29 @@ If we are concatating the string s1 with "Hello", this will not modify s1. Inste
 
     String s1="Surya";
     s1="Hello "+s1;
+    
+We can use **concat** method on the string to concat a string to the exisiting string. As strings are immutable, concatating a string will not change the original string.Instead, A new string will be created in the heap memory with the concated string. 
 
+    String s = "Surya";
+    s.concat(" Venkatesh");
+    System.out.println(s); // Surya
+    
+ In the above example, printing s will still print **Surya** as after concating as s will unmodified, s will still refer to the original value. But the new string value will be in the heap memory. In order to access new value we need to store it in a variable as follows.
+ 
+    String s = "Surya";
+    String a= s.concat(" Venkatesh");
+    System.out.println(a); // Surya Venkatesh
+    
+**charAt** method on a string returns the character at the index specified. 
+
+**join** method can be used to join multiple strings into one string.
+`String.join(delimiter,StringArray)`
+
+    String[] arr ={"Surya","Venkatesh","vijjana"};
+    String name = String.join(" ",arr);
+    System.out.println(name); // Surya Venkatesh Vijjana
+        
+        
 ## StringBuffer and StringBuilder
 
 In order to create a mutable string, we can use StringBuilder/StringBuffer. [ **Note: StringBuffers are Thread safe whereas StringBuilders aren't thread safe**. ]<br>
