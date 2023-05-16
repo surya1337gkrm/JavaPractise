@@ -1,4 +1,8 @@
-import java.io.IOException;
+class A extends Thread {
+    public void run() {
+        System.out.println("Hi");
+    }
+}
 
 class NewException extends Exception {
     public NewException(String str) {
@@ -84,6 +88,9 @@ public class Exceptions {
         } catch (Exception ex) {
             System.out.println("Propagated Error : " + ex);
         }
+
+        A obj = new A();
+        obj.start();
 
     }
 }
