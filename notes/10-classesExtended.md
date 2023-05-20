@@ -6,22 +6,22 @@ We can just define a class with methods we want to include in the class but don'
 - Method should be declared but not defined. [ don't include {} after the method declaration ]
 - **We cannot create objects of the abstract class directly**. If we want to create an object of an abstract class, we have to **inherit the abstract class and should define the abstract method and use this child class to create the object**.
 
-  abstract class A {
-  public abstract void print();
-  }
+      abstract class A {
+        public abstract void print();
+       }
 
-  class B extends A {
-  public void print() {
-  System.out.println("In B.");
-  }
-  }
+       class B extends A {
+        public void print() {
+        System.out.println("In B.");
+        }
+       }
 
-  class Practise {
-  public static void main(String[] args) {
-  A obj = new B();
-  obj.print();
-  }
-  }
+       class Practise {
+        public static void main(String[] args) {
+            A obj = new B();
+            obj.print();
+         }
+       }
 
 A is an abstract class with a abstract method print declared in it. In order to create an object of class A, we need to create a child class of class A and must define the abstract method in it or else it will throw an error.
 
