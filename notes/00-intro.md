@@ -23,7 +23,7 @@
 
 ---
 
-**Java is Platform independent** i.e, java could will run on any machine until it has JVM [ Java Virtual Machine ] Installed.
+**Java is Platform independent** i.e, java code will run on any machine until it has JVM [ Java Virtual Machine ] Installed.
 
 JVM can only understand bytecode. So, the java code which we write should be compiled to a byte code using java compiler.
 
