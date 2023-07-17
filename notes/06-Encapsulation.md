@@ -1,4 +1,4 @@
-# 05. Encapsulation
+# 06. Encapsulation
 
 We can hide our data / methods implementation outside of the class. So no one can access them. Anyone can access them only them using other public methods defined in the class.
 
