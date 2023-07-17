@@ -6,7 +6,7 @@ We can use **final keyword** to declare variables,classes & methods.
 
 #### Variables declared using Final keyword
 
-**Variables declared using final keyword will be treated as constants** in java. We can modify the value of the variance once initialized.
+**Variables declared using final keyword will be treated as constants** in java. We cannot modify the value of the variable once initialized.
 
     class Main{
         public static void main(String[] args){
